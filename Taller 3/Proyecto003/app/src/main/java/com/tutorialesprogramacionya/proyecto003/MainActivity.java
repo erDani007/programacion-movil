@@ -42,34 +42,25 @@ public class MainActivity extends AppCompatActivity {
                 int suma = nro1 + nro2;
                 String resu = String.valueOf(suma);
                 tv1.setText(resu);
-            } else {
-
-                Toast.makeText(getApplicationContext(), "Ingrese números diferentes de cero", Toast.LENGTH_SHORT).show();
             }
 
             if (nro1 !=0 && nro2 != 0 && r2.isChecked() == true) {
                 int resta = nro1 - nro2;
                 String resu = String.valueOf(resta);
                 tv1.setText(resu);
-            } else {
-
-                Toast.makeText(getApplicationContext(), "Ingrese números diferentes de cero", Toast.LENGTH_SHORT).show();
             }
             if (nro1 !=0 && nro2 != 0 && r3.isChecked() == true) {
                 int multiplicacion = nro1 * nro2;
                 String resu = String.valueOf(multiplicacion);
                 tv1.setText(resu);
-            } else {
-
-                Toast.makeText(getApplicationContext(), "Ingrese números diferentes de cero", Toast.LENGTH_SHORT).show();
             }
 
             if (nro1 !=0 && nro2 != 0 && r4.isChecked() == true) {
                 int division = nro1 - nro2;
                 String resu = String.valueOf(division);
                 tv1.setText(resu);
-            } else {
-
+            }
+            if(nro1 == 0 && nro2 == 0){
                 Toast.makeText(getApplicationContext(), "Ingrese números diferentes de cero", Toast.LENGTH_SHORT).show();
             }
 
