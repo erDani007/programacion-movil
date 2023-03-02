@@ -1,5 +1,6 @@
 package com.tutorialesprogramacionya.proyecto003;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -7,6 +8,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -34,26 +36,42 @@ public class MainActivity extends AppCompatActivity {
         String valor2 = et2.getText().toString();
         int nro1 = Integer.parseInt(valor1);
         int nro2 = Integer.parseInt(valor2);
-        if (r1.isChecked() == true) {
-            int suma = nro1 + nro2;
-            String resu = String.valueOf(suma);
-            tv1.setText(resu);
-        } else if (r2.isChecked() == true) {
-            int resta = nro1 - nro2;
-            String resu = String.valueOf(resta);
-            tv1.setText(resu);
-        }
-        if (r3.isChecked() == true) {
-            int multiplicacion = nro1 * nro2;
-            String resu = String.valueOf(multiplicacion);
-            tv1.setText(resu);
-        }
 
-        if (r4.isChecked() == true) {
-            int division = nro1 - nro2;
-            String resu = String.valueOf(division);
-            tv1.setText(resu);
-        }
+
+            if (nro1 !=0 && nro2 != 0 && r1.isChecked() == true) {
+                int suma = nro1 + nro2;
+                String resu = String.valueOf(suma);
+                tv1.setText(resu);
+            } else {
+
+                Toast.makeText(getApplicationContext(), "Ingrese números diferentes de cero", Toast.LENGTH_SHORT).show();
+            }
+
+            if (nro1 !=0 && nro2 != 0 && r2.isChecked() == true) {
+                int resta = nro1 - nro2;
+                String resu = String.valueOf(resta);
+                tv1.setText(resu);
+            } else {
+
+                Toast.makeText(getApplicationContext(), "Ingrese números diferentes de cero", Toast.LENGTH_SHORT).show();
+            }
+            if (nro1 !=0 && nro2 != 0 && r3.isChecked() == true) {
+                int multiplicacion = nro1 * nro2;
+                String resu = String.valueOf(multiplicacion);
+                tv1.setText(resu);
+            } else {
+
+                Toast.makeText(getApplicationContext(), "Ingrese números diferentes de cero", Toast.LENGTH_SHORT).show();
+            }
+
+            if (nro1 !=0 && nro2 != 0 && r4.isChecked() == true) {
+                int division = nro1 - nro2;
+                String resu = String.valueOf(division);
+                tv1.setText(resu);
+            } else {
+
+                Toast.makeText(getApplicationContext(), "Ingrese números diferentes de cero", Toast.LENGTH_SHORT).show();
+            }
 
     }
 }
