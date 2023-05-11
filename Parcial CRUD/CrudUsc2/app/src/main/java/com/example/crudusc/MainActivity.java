@@ -31,17 +31,25 @@ public class MainActivity extends AppCompatActivity {
         getAll();
 
         //eliminar empleado por ID
-        eliminarEmpleado(11);
+        //eliminarEmpleado(14);
+        //eliminarEmpleado(16);
 
         //crear empleado nuevo
-        Empleado empleado = new Empleado();
+        /**Empleado empleado = new Empleado();
         empleado.setNombre("Juan2");
         empleado.setPassword("1234567");
         empleado.setEmail("juan@gmail.comm");
-        createEmployee(empleado);
+        createEmployee(empleado);**/
+
+        /**Empleado empleadoactualizado = new Empleado();
+        empleado.setNombre("Juan3");
+        empleado.setPassword("12345");
+        empleado.setEmail("juan3@gmail.comm");
+        createEmployee(empleado);**/
+
 
         //actualizar empleado
-        actualizarEmpleado(3, empleado);
+        //actualizarEmpleado(17, empleadoactualizado);
     }
     private void getAll(){
         Retrofit retrofit = new Retrofit.Builder()
@@ -130,14 +138,14 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void actualizarEmpleado( int idEmpleado, Empleado empleado){
+    private void actualizarEmpleado( int idEmpleado, Empleado empleadoactualizado){
         Retrofit retrofit = new Retrofit.Builder()
                 //.baseUrl("http://localhost:8080/")
                 .baseUrl("http://192.168.101.75:8081")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         cruempleado = retrofit.create(CrudEmpleadoInterface.class);
-        Call<Empleado> call = cruempleado.actualizarEmpleado(idEmpleado, empleado);
+        Call<Empleado> call = cruempleado.actualizarEmpleado(idEmpleado, empleadoactualizado);
 
         call.enqueue(new Callback<Empleado>(){
 
